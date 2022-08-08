@@ -2,6 +2,8 @@
 NAME	=
 CLIENT	=	client
 SERVER	=	server
+
+
 	# libft Variables #
 LIBFT		=	./libft/libft.a
 LIBFT_DIR	=	./libft
@@ -13,10 +15,12 @@ SRC_S	=	server.c
 INC		=	-I. -I$(LIBFT_DIR) -I$(LIBFT_DIR)/stack \
 			-I$(LIBFT_DIR)/get_next_line
 
+
 	# Compiling Variables #
 CC			=	gcc
 CFLAG		=	-Wall -Wextra -Werror
 RM			=	rm -f
+
 
 	# Colors #
 GREEN		=	\e[38;5;118m
@@ -25,16 +29,17 @@ RESET		=	\e[0m
 _SUCCESS	=	[$(GREEN)SUCCESS$(RESET)]
 _INFO		=	[$(YELLOW)INFO$(RESET)]
 
+
 	# Debugger #
 ifeq ($(DEBUG), 1)
 	D_FLAG	=	-g
 endif
 
+
 	# Fsanitize #
 ifeq ($(SANITIZE), 1)
 	D_FLAG	=	-fsanitize=leak -g
 endif
-
 
 all: $(SERVER) $(CLIENT)
 
