@@ -20,23 +20,25 @@
 ** @param	int		n	- The integer to output.
 ** @param	int		fd	- file descriptor on which to write.
 */
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd)
 {
+  int len = 0;
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+    len += write(fd, "-2147483648", 11);
+		return(len);
 	}
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
+    len += ft_putchar_fd('-', fd);
 		n = -n;
 	}
 	if (n < 10)
 	{
-		ft_putchar_fd(n + '0', fd);
-		return ;
+		len += ft_putchar_fd(n + '0', fd);
+		return (len);
 	}
-	ft_putnbr_fd(n / 10, fd);
-	ft_putnbr_fd(n % 10, fd);
+	len += ft_putnbr_fd(n / 10, fd);
+	len += ft_putnbr_fd(n % 10, fd);
+  return (len);
 }

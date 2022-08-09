@@ -20,7 +20,9 @@
 ** @param	char	c	- The character to output.
 ** @param	int		fd	- the file descriptor on which to write.
 */
-void	ft_putchar_fd(char c, int fd)
+
+int	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+  int len = write(fd, &c, 1);
+  return (len);
 }
