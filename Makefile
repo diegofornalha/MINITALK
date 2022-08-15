@@ -17,7 +17,7 @@ INC		=	-I. -I$(LIBFT_DIR) -I$(LIBFT_DIR)/stack \
 
 
 	# Compiling Variables #
-CC			=	gcc
+CC			=	cc
 CFLAG		=	-Wall -Wextra -Werror
 RM			=	rm -f
 
