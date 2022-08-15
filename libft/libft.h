@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dida-sil <dida-sil@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 10:30:34 by dida-sil          #+#    #+#             */
+/*   Updated: 2022/08/15 10:33:11 by dida-sil         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -12,24 +24,12 @@
 # define ANSI_COLOR_YELLOW	"\x1b[33m"
 # define ANSI_COLOR_RESET	"\x1b[0m"
 
-/*
-** BONUS:
-** This structure represents the elements of the single-list.
-**
-** void	*content		- data contained in the element. The void * allows to
-** 						store any kind of data.
-** struct s_list *next	- next element’s address or NULL if it’s the last
-** 						element.
-*/
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
 
-/*
-** Part 1 Functions
-*/
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
@@ -54,10 +54,6 @@ int			ft_toupper(int c);
 int			ft_tolower(int c);
 char		*ft_strdup(const char *s);
 
-/*
-** Part 2 Functions
-*/
-
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
@@ -65,14 +61,11 @@ char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-int		ft_putchar_fd(char c, int fd);
+int			ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
-int		ft_putnbr_fd(int n, int fd);
+int			ft_putnbr_fd(int n, int fd);
 
-/*
-** Single List Functions (Bonus)
-*/
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
@@ -85,9 +78,6 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void		ft_lstprint(t_list *lst);
 
-/*
-** Bonus Functions
-*/
 int			ft_abs(int j);
 int			ft_is_even(int j);
 long long	ft_power(long long n, long long times);
